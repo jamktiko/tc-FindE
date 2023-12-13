@@ -23,7 +23,14 @@ const AddresSchema = new mongoose.Schema({
     max: 30,
     required: true,
   },
+  lat: {
+    type: Number,
+  },
+  long: {
+    type: Number,
+  },
 });
 
 const Addres = mongoose.model('Addres', AddresSchema);
 module.exports = Addres;
+
