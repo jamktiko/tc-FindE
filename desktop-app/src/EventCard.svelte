@@ -12,6 +12,8 @@
   let showDeleteConfirmationModal = false;
   let showDeleteSuccessModal = false;
 
+  let showModal = true;
+
   const handleClick = () => {
     showOptions = !showOptions;
   };

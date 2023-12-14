@@ -12,18 +12,21 @@
   let noEvents = true;
   let event;
   // Haetaan kannasta tapahtumat aina kun komponentti alustetaan
-  // Event muuttujaan tulee taulukko tapahtuma-objekteja
+  // Event-muuttujaan tulee taulukko tapahtuma-objekteja
   // getEventsById-funktio on eventStoressa ja sitä käytetään alustuksen yhteydessä
   onMount(async () => {
     try {
       let id = sessionStorage.getItem('_id');
       const result = await getEventsById(id);
       event = result;
+      events.set([...result]);
 
       console.log(
         'Tässä on Event-taulukko tämän käyttäjän tapahtumista',
         event
       );
+
+      console.log('Events store after update:', $events);
     } catch (error) {
       // Käsittele virhe täällä tarvittaessa
       console.error('Virhe haettaessa tapahtumaa ID:n perusteella', error);

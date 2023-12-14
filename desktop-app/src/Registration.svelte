@@ -45,13 +45,7 @@
       errorMessage = 'Invalid email format.';
       return;
     }
-    console.log(
-      'Starting registration process...',
-      etunimi,
-      sukunimi,
-      salasana,
-      sposti
-    );
+
     try {
       const res = await registerUser(etunimi, sukunimi, sposti, salasana);
       console.log(res);
@@ -151,7 +145,7 @@
       type="text"
       id="email"
       name="E-mail"
-      placeholder="E-mail"
+      placeholder="e.g. yourname@email.com"
       autocomplete="new-email"
       bind:value={sposti}
     />
@@ -159,7 +153,7 @@
 
   <div class="input-box">
     <label for="password" class="label-text" />
-    Password
+    Password (min. 6 characters)
     <input
       type="password"
       id="password"
@@ -203,6 +197,7 @@
         message={`Registration successful! A confirmation e-mail has been sent to '${sposti}'.`}
         duration={3000}
         on:closeModal={closeModal}
+        showButtons={false}
       />
     {/if}
   </div>

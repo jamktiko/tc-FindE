@@ -16,6 +16,9 @@ export const getCoordinates = async (address) => {
       const latitude = coordinates[1];
       const longitude = coordinates[0];
 
+      console.log('Mapboxilta haettu latitude ' + latitude);
+      console.log('Mapboxilta haettu longitude ' + longitude);
+
       return { latitude, longitude };
     } else {
       throw new Error('No coordinates found for the provided address');

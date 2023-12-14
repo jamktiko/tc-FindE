@@ -23,7 +23,6 @@ const checkLoggedInStatus = () => {
 };
 
 const loginUser = (username, password, callback) => {
-  console.log('loginUser is executed');
   fetch('https://backendwithlogin-1-u7980985.deta.app/users/login', {
     method: 'POST',
     headers: {
@@ -33,7 +32,7 @@ const loginUser = (username, password, callback) => {
   })
     .then((response) => {
       if (!response.ok) {
-        // Check if the response status is not in the 200-299 range
+        // Tarkista onko response 200-299
         console.log('pieleen meni');
       }
 

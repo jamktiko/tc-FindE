@@ -114,9 +114,6 @@
     try {
       // Obtain coordinates using getCoordinates function
       const data = await getCoordinates(address);
-      console.log('Syötetty osoite:', address);
-      // Log the coordinates to verify
-      console.log('Käyttäjän koordinaatit:', data.latitude, data.longitude);
 
       // Check if the map and marker are initialized
       if (!map || !marker) {
@@ -188,11 +185,7 @@
       // Obtain coordinates using getCoordinates function
       const data = await getCoordinates(katuosoite, postinumero);
 
-      console.log(
-        'Coordinates before appending to form data:',
-        data.latitude,
-        data.longitude
-      );
+      console.log('Koordinatit ennen appendia:', data.latitude, data.longitude);
 
       // Append location data to form data
       const sijainti = [
@@ -221,7 +214,7 @@
 
       // Make axios POST request
       const response = await axios.post(
-        `https://d17e239b9ewh66.cloudfront.net/events${id}`,
+        `https://backendwithlogin-1-u7980985.deta.app/events/${id}`,
         formData,
         { headers }
       );
@@ -285,7 +278,11 @@
 
 {#if displayModal}
   <div class="overlay">
-    <Modal message={modalMessage} on:closeModal={closeModal} />
+    <Modal
+      message={modalMessage}
+      on:closeModal={closeModal}
+      showButtons={false}
+    />
   </div>
 {/if}
 

@@ -2,8 +2,12 @@
   export let closeModal;
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="modal" on:click={closeModal}>
-  <div class="modal-content" on:click={event => event.stopPropagation()}>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
+  <div class="modal-content" on:click={(event) => event.stopPropagation()}>
     <p>Coming soon</p>
     <button on:click={closeModal}>Close</button>
   </div>
@@ -36,16 +40,17 @@
 
   p {
     color: #333;
-      font-size: 1.5em;
-    }
+    font-size: 1.5em;
+  }
 
-    button {
+  button {
     color: white;
     background-color: black;
     border-radius: 20px;
     padding: 6px 10px;
     font-size: 1rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
     width: 100%;
     cursor: pointer;
     margin-top: 2em;
@@ -55,15 +60,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    }
-  
-    button:hover {
-        color: black;
+  }
+
+  button:hover {
+    color: black;
     background-color: rgb(138, 138, 138);
     border-radius: 20px;
     padding: 6px 10px;
     font-size: 1rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
     width: 100%;
     cursor: pointer;
     transition: background-color 0.7s ease-in-out;
@@ -73,5 +79,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    }
+  }
 </style>
