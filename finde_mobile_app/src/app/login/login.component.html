@@ -1,0 +1,19 @@
+<!-- Login-komponentti sisältää google-kirjautumisen sekä lomakkeet sisäänkirjautumiseen.
+Silloin kun suoritetaan funktioita, näytetään pelkästään latausikoni. -->
+
+<ns-loading-page [busy]="loading" *ngIf="loading"></ns-loading-page>
+<StackLayout *ngIf="!loading" class="body">
+  <Image src="~/images/finde-keltane.png" class="logo"></Image>
+
+  <Image src="~/images/finde-youraccount-signin.png" class="accDetails"></Image>
+  <Button (tap)="googleSignin()" class="googleButton">
+    <FormattedString>
+      <Span text="&#xf1a0;" class="fab" id="googleicon"></Span>
+      <Span class="teksti" text=" Login with Google"></Span>
+    </FormattedString>
+  </Button>
+
+  <StackLayout>
+    <ns-login-forms></ns-login-forms>
+  </StackLayout>
+</StackLayout>

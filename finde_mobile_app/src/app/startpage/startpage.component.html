@@ -1,0 +1,20 @@
+<!-- Sovelluksen aloitus-sivu. Tästä navigoidaan rekisteröinti tai login-sivulle.  -->
+<StackLayout class="body">
+  <Image src="~/icons/valk_logo.png" class="logo"></Image>
+
+  <FlexboxLayout class="flex">
+    <Button
+      class="register_button"
+      text="Register"
+      (tap)="routeRegister()"
+    ></Button>
+    <label class="registered" text="Already have an account?"></label>
+
+    <label
+      class="login"
+      [ngClass]="{ pressed: isPressed }"
+      text="Log in here!"
+      (tap)="routeLogin()"
+    ></label>
+  </FlexboxLayout>
+</StackLayout>

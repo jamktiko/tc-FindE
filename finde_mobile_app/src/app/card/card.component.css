@@ -1,0 +1,58 @@
+.cardStyle {
+  background-color: #494b50;
+  max-height: 15vh;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.304);
+}
+.pressed {
+  background-color: #7c8394;
+}
+
+.image {
+  width: 20%;
+  height: 20vw;
+  margin: 5vw;
+
+  overflow: hidden;
+  position: relative;
+}
+.img {
+  width: 100%; /* Anna kuvan täyttää koko leveys StackLayoutin sisällä */
+  height: 100%;
+  object-fit: stretch;
+  margin: 0;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
+  border-radius: 15;
+}
+.content {
+  margin-left: 2%;
+}
+.nimi {
+  color: #f8efd6;
+}
+.x_ikoni {
+  margin-right: 5%;
+  font-size: 18;
+  color: #f8efd6;
+}
+.paivamaara {
+  margin-left: 5%;
+  color: #f8efd6;
+}
+
+.henry {
+  margin-left: 5%;
+  color: #f8efd6;
+}
+
+.tickets {
+  margin-left: 5%;
+  color: #f8efd6;
+}
+#sydan {
+  margin-right: 5%;
+  font-size: 15;
+}

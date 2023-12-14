@@ -1,0 +1,77 @@
+<!-- CardView komponentti notifications-komponentin tapahtumien näyttämiseen. Tälle komponentille välitetään
+tietoja notifications-komponentille haetuista tiedoista. -->
+
+<CardView
+  [nsRouterLink]="['/event/', eventData._id]"
+  class="cardStyle"
+  margin="20"
+  elevation="60"
+  radius="40"
+  width="90%"
+  height="40%"
+  (tap)="buttonActive()"
+  [ngClass]="{ pressed: isPressed }"
+>
+  <FlexboxLayout padding="7vh 7vh">
+    <StackLayout class="image">
+      <Image class="img" [src]="eventData.kuvaUrl"></Image
+    ></StackLayout>
+    <StackLayout class="content" flexGrow="1">
+      <FlexboxLayout justifyContent="space-between">
+        <label class="nimi" [text]="eventData.nimi" color="white"></label>
+      </FlexboxLayout>
+      <FlexboxLayout>
+        <Image
+          src="~/icons/kalenteriVarillinen.png"
+          class="fas"
+          width="10"
+          color="white"
+        ></Image>
+        <label class="paivamaara" [text]="eventData.aloituspvm"></label>
+      </FlexboxLayout>
+
+      <FlexboxLayout>
+        <Image
+          src="~/icons/markerVarillinen.png"
+          class="fas"
+          width="10"
+          color="white"
+        ></Image>
+        <label
+          class="henry"
+          horizontalAlignment="left"
+          [text]="
+            eventData.sijainti[0].paikkakunta +
+            ' ' +
+            '(' +
+            this.locationService
+              .getDistance(
+                this.eventData.sijainti[0].lat,
+                this.eventData.sijainti[0].long,
+                this.locationService.latitude,
+
+                this.locationService.longitude
+              )
+              .toFixed(1) +
+            'km)'
+          "
+        ></label>
+      </FlexboxLayout>
+      <FlexboxLayout justifyContent="space-between">
+        <FlexboxLayout flexDirection="row" justifyContent="space-between">
+          <Image
+            src="~/icons/at-Varillinen.png"
+            class="fas"
+            width="10"
+            color="white"
+          ></Image>
+          <label
+            class="tickets"
+            horizontalAlignment="left"
+            [text]="eventData.tapahtumapaikka"
+          ></label>
+        </FlexboxLayout>
+      </FlexboxLayout>
+    </StackLayout>
+  </FlexboxLayout>
+</CardView>

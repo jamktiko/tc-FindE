@@ -1,0 +1,23 @@
+<!-- Mapbox-kartta.  -->
+
+<GridLayout rows="*, auto">
+  <Mapbox
+    row="0"
+    [accessToken]="mapToken"
+    mapStyle="traffic_day"
+    [latitude]="this.locationService.latitude"
+    [longitude]="this.locationService.longitude"
+    delay="1000"
+    hideCompass="true"
+    zoomLevel="18"
+    showUserLocation="false"
+    disableZoom="false"
+    disableRotation="false"
+    disableScroll="false"
+    disableTilt="false"
+    trackUser="true"
+    (mapReady)="onMapReady($event)"
+  ></Mapbox>
+
+  <Button row="1" text="Back" (tap)="navigateToBottombar()"></Button>
+</GridLayout>

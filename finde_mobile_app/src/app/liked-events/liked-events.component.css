@@ -1,0 +1,56 @@
+.body {
+  background-image: url("~/icons/kuvio_2_1.png");
+  background-size: 90% 80%;
+  background-repeat: no-repeat;
+  background-position: 90% 300%;
+  background-color: #323439;
+}
+.scroll {
+  height: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-top: 3%;
+  font-size: 30;
+  color: white;
+  font-weight: bold;
+  margin-top: 5%;
+}
+
+.logo {
+  width: 50%;
+  margin-top: 2%;
+}
+
+.ilmoitukset {
+  text-align: center;
+  color: white;
+  font-size: 30;
+  letter-spacing: 0.2;
+}
+
+.viiva {
+  color: white;
+  text-align: center;
+}
+
+.events {
+  color: white;
+  text-align: center;
+  font-family: "Font Awesome 6 Brands", "fa-brands-400";
+  font-weight: 400;
+}
+
+.fas {
+  width: 10%;
+  color: white;
+  margin-top: 2%;
+  text-align: right;
+  margin-left: 2%;
+}
+.text {
+  text-align: center;
+  margin-top: 5vh;
+  color: white;
+}
