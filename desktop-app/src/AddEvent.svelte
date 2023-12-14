@@ -40,6 +40,8 @@
   let selectedFile;
   const genret = ['Music', 'Sports', 'Family', 'Food'];
 
+  let lat = '';
+  let long = '';
   let map;
   let marker;
 
@@ -114,6 +116,9 @@
     try {
       // Obtain coordinates using getCoordinates function
       const data = await getCoordinates(address);
+
+      lat = data.latitude;
+      long = data.longitude;
 
       // Check if the map and marker are initialized
       if (!map || !marker) {
@@ -193,8 +198,8 @@
         { name: 'postinumero', value: postinumero },
         { name: 'paikkakunta', value: paikkakunta },
         { name: 'maa', value: maa },
-        { name: 'lat', value: data.latitude },
-        { name: 'long', value: data.longitude },
+        { name: 'lat', value: lat },
+        { name: 'long', value: long },
       ];
 
       formData.append('sijainti', sijainti);
@@ -223,7 +228,7 @@
       resetFormFields();
 
       // Initialize map with new coordinates
-      initializeMap(data.latitude, data.longitude);
+      initializeMap(lat, long);
 
       // Display success message
       openModal('Event added successfully!');
