@@ -20,29 +20,16 @@
       const result = await getEventsById(id);
       event = result;
       events.set([...result]);
-
-      console.log(
-        'Tässä on Event-taulukko tämän käyttäjän tapahtumista',
-        event
-      );
-
-      console.log('Events store after update:', $events);
     } catch (error) {
       // Käsittele virhe täällä tarvittaessa
       console.error('Virhe haettaessa tapahtumaa ID:n perusteella', error);
     }
   });
   // Tarkista storen sisältö käyttäjän kirjautuessa sisään
-  $: {
-    if ($events.length > 0) {
-      noEvents = false;
-    } else {
-      noEvents = true;
-    }
-  }
+  $: noEvents = $events.length === 0;
 
   function handleEventAdded() {
-    showAddEventForm = !showAddEventForm; // Set to false when the event is successfully added
+    showAddEventForm = !showAddEventForm; // Eventform suljetaan
   }
 
   function toggleAddEventForm() {

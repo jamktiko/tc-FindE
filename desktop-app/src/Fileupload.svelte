@@ -12,10 +12,7 @@
 </script>
 
 <div class="file-upload-container">
-  <!-- Stylish file upload button -->
-  <label for="file-upload" class="file-upload-btn">
-    Choose File
-  </label>
+  <label for="file-upload" class="file-upload-btn"> Choose File </label>
   <input
     type="file"
     id="file-upload"
@@ -26,21 +23,19 @@
     class="hidden-file-input"
   />
 
-  <!-- Display selected file name (optional) -->
   {#if selectedFile}
     <p>Selected File: {selectedFile.name}</p>
   {/if}
 </div>
 
 <style>
-  /* Stylish button styles */
-  input[type="file"] {
-    display: none; /* Hide the default file input */
+  input[type='file'] {
+    display: none;
   }
 
   .file-upload-container {
     display: flex;
-    align-items: center; /* Center vertically within the container */
+    align-items: center;
   }
 
   .file-upload-btn {
@@ -52,17 +47,16 @@
     border-radius: 5px;
     cursor: pointer;
     display: inline-block;
-    margin-right: 10px; /* Add margin between button and text */
+    margin-right: 10px;
     transition:
       background-color 0.5s ease-in-out,
       color 0.5s ease-in-out;
   }
 
   .file-upload-btn:hover {
-    background-color: #1f1f1f; /* Darker green on hover */
+    background-color: #1f1f1f;
   }
 
-  /* Hidden file input is triggered by clicking on the stylish button */
   .hidden-file-input {
     display: none;
   }

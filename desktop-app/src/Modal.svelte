@@ -54,6 +54,8 @@
   };
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="modal-background" on:click={close}>
   <div transition:fadeInOut class="modal">
     <p>{message}</p>
@@ -77,9 +79,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9998; /* Lower z-index than the modal */
-    backdrop-filter: blur(2px); /* Adjust the blur strength as needed */
-    pointer-events: none; /* Ignore pointer events on the background */
+    z-index: 9998;
+    backdrop-filter: blur(2px); /* Taustan blurrauksen vahvuus */
+    pointer-events: none;
   }
 
   .modal {
@@ -112,10 +114,10 @@
   }
 
   .confirm-button {
-    background-color: #4caf50; /* Green */
+    background-color: #4caf50;
   }
 
   .cancel-button {
-    background-color: #f44336; /* Red */
+    background-color: #f44336;
   }
 </style>

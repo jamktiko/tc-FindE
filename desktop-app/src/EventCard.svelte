@@ -12,8 +12,6 @@
   let showDeleteConfirmationModal = false;
   let showDeleteSuccessModal = false;
 
-  let showModal = true;
-
   const handleClick = () => {
     showOptions = !showOptions;
   };
@@ -21,12 +19,9 @@
   const handleOptionClick = (option) => {
     if (option === 'edit') {
       console.log('Edit clicked');
-      // Add your modify logic here
     } else if (option === 'delete') {
       showDeleteConfirmationModal = true;
     }
-
-    // Hide the options after handling the click
     showOptions = false;
   };
 
@@ -35,7 +30,7 @@
       console.log('Deleting event...');
 
       const deletedEvent = await deleteEvent(event._id);
-      // Update the events store after deletion
+      // Päivitetään events-store
       $events = $events.filter((e) => e._id !== event._id);
 
       console.log('Event deleted successfully:', deletedEvent);
@@ -47,21 +42,18 @@
     } catch (error) {
       console.error('Error deleting event:', error);
     } finally {
-      // Close the delete confirmation modal, whether successful or not
       showDeleteConfirmationModal = false;
     }
   };
 
   const cancelDelete = () => {
-    // Close the delete confirmation modal
+    // Sulje delete-modal
     showDeleteConfirmationModal = false;
   };
 
   onMount(() => {
-    // Add an event listener to close the options-box when clicking outside of it
     window.addEventListener('click', handleWindowClick);
     return () => {
-      // Cleanup the event listener on component destruction
       window.removeEventListener('click', handleWindowClick);
     };
   });

@@ -18,10 +18,10 @@
   let showModal = false;
   let errorMessage = '';
 
-  // Function to check if a string is empty
+  // Onko string tyhjä
   const isEmpty = (value) => value.trim() === '';
 
-  // Function to check if the email is in a valid format
+  // Onko e-mail -formaatti oikea
   const isValidEmail = (sposti) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(sposti);
@@ -57,12 +57,12 @@
         // Registration failed
         console.error('Registration failed:', res.data.message);
 
-        // Handle error, show a message, etc.
+        // Virheenkäsittely
       }
     } catch (error) {
       console.error('Registration failed:', error.message);
 
-      // Handle error, show a message, etc.
+      // Virheenkäsittely
     } finally {
       registering = false;
     }
@@ -76,13 +76,12 @@
     register();
     isClicked = true;
 
-    // Reset the animation after a delay (e.g., 300ms)
     setTimeout(() => {
       isClicked = false;
     }, 300);
   }
 
-  // Function to reset form fields
+  // Formin tyhjennys
   const resetForm = () => {
     etunimi = '';
     sukunimi = '';
@@ -92,7 +91,7 @@
     accepted = false;
   };
 
-  // Function to handle modal close
+  // Modaalin sulkeminen
   const closeModal = () => {
     showModal = false;
     resetForm();

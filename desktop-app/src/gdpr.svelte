@@ -1,4 +1,3 @@
-<!-- GDPR.svelte -->
 <script>
   export let checked;
 
@@ -9,7 +8,6 @@
   }
 
   function closeModal(event) {
-    // Close the modal only if the click is outside the modal content
     if (event.target === event.currentTarget) {
       showModal = false;
     }
@@ -174,7 +172,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Center text content within the modal */
+    text-align: center;
   }
 
   .overlay {
@@ -229,7 +227,7 @@
   }
 
   a:hover {
-    color: #4a99ee; /* Change to your desired hover color */
+    color: #4a99ee;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
   }
@@ -245,7 +243,7 @@
     width: 50%;
     cursor: pointer;
     margin-top: 2em;
-    margin-right: auto; /* Center the button horizontally within the modal */
+    margin-right: auto;
     margin-left: auto;
     transition: background-color 0.7s ease-in-out;
     display: flex;
@@ -265,7 +263,7 @@
     cursor: pointer;
     transition: background-color 0.7s ease-in-out;
     margin-top: 2em;
-    margin-right: auto; /* Center the button horizontally within the modal */
+    margin-right: auto;
     margin-left: auto;
     display: flex;
     align-items: center;
